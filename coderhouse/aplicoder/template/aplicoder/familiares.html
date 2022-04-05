@@ -1,0 +1,18 @@
+
+{% extends 'aplicoder/base.html' %}
+
+{% block familiares %}
+            
+
+
+    <form action="/aplicoder/familiares/" method="POST">
+        {% csrf_token %}    
+        <label for="Nombre">Nombre:</label>
+        <input type="text"  name="Nombre" placeholder="Ingrese su nombre">
+        
+        <label for="DNI">dni:</label>
+        <input type= "number" name="dni" placeholder="Ingrese DNI">
+        
+        <input type="submit" value="Enviar">
+        <input type="reset" name="Borrar">
+{% endblock familiares %}
