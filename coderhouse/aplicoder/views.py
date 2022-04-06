@@ -20,7 +20,7 @@ def family(request):
             print("\npasaste el cleaned data")
             datos=Familia(nombre=datos['Nombre'],dni=datos['dni'])
             datos.save()
-        return render(request, "aplicoder/familiares.html", {"familia": family, "title": "familia", "page": "familia", "formulario": familiaridad})
+        return render(request, "aplicoder/familiares.html")
     else:
         familiaridad=Dato()
-        return render(request, "aplicoder/familiares.html", {"familia": family, "title": "familia", "page": "familia", "formulario": familiaridad})
+        return render(request, "aplicoder/familiares.html")

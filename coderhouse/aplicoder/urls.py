@@ -5,5 +5,4 @@ from aplicoder.views import *
 urlpatterns = [
     path('',inicio),
     path('familiares/',family),
-    
 ]
