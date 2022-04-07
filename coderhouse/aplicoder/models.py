@@ -17,5 +17,5 @@ class selecciones(models.Model):
 
 class Familia(models.Model):
     nombre=models.CharField(max_length=40)
-    DNI=models.IntegerField()
+    dni=models.IntegerField()
 

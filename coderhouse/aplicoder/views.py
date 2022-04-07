@@ -11,16 +11,18 @@ def inicio(request):
 
 def family(request):
     if request.method=='POST':
-        familiaridad=Dato(request.POST)
+        familiaridad=Dato(data=request.POST)
         print(familiaridad)
         print("pasastee los dastos a familiaridad\n")
         if familiaridad.is_valid():
             print("\nentraste")
             datos=familiaridad.cleaned_data
             print("\npasaste el cleaned data")
-            datos=Familia(nombre=datos['Nombre'],dni=datos['dni'])
+            datos=Familia(nombre=datos['nombre'], dni=datos['dni'])
             datos.save()
-        return render(request, "aplicoder/familiares.html")
+            return render(request,"aplicoder/index.html")
     else:
-        familiaridad=Dato()
-        return render(request, "aplicoder/familiares.html")
+            
+        familiaridad_form=Dato()
+        print("is_valid false")
+        return render(request, 'aplicoder/familiares.html',{"formulario": familiaridad_form})
